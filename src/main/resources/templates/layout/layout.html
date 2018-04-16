@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:include="/common/common_head :: commonHeader('易代储管理后台-首页')"></head>
+<body>
+<!-- 头部文件 -->
+<nav class="navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img alt="Brand" src="#" th:src="@{/images/logo.png}">
+            </a>
+        </div>
+    </div>
+</nav>
+<div th:include="/common/onload_js :: onloadJS"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+            <!-- 左侧导航 -->
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" >
+
+                <div class="panel panel-default">
+                    <div  class="panel-heading handClass" role="tab" id="headingMy" data-toggle="collapse" data-parent="#accordion" href="#collapseMy" aria-expanded="true" aria-controls="collapseMy">
+                        <h4 class="panel-title">
+                            <a>
+                                我的桌面
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseMy" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingMy">
+                        <ul class="list-group">
+                            <li class="list-group-item handClass">未读消息</li>
+                            <li class="list-group-item handClass">工作计划</li>
+                            <li class="list-group-item handClass">个人信息</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div  class="panel-heading handClass" role="tab" id="headingCustomer" data-toggle="collapse" data-parent="#accordion" href="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer">
+                        <h4 class="panel-title">
+                            <a>
+                                客户管理
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseCustomer" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCustomer">
+                        <ul class="list-group">
+                            <li class="list-group-item handClass">全部客户</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading handClass" role="tab" id="headingOrders" data-toggle="collapse" data-parent="#accordion" href="#collapseOrders" aria-expanded="false" aria-controls="collapseOrders">
+                        <h4 class="panel-title">
+                            <a>
+                                订单管理
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOrders" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOrders">
+                        <ul class="list-group">
+                            <li class="list-group-item handClass">全部订单</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading handClass" role="tab" id="headingStore" data-toggle="collapse" data-parent="#accordion" href="#collapseStore" aria-expanded="false" aria-controls="collapseStore">
+                        <h4 class="panel-title">
+                            <a>
+                                库存管理
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseStore" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingStore">
+                        <ul class="list-group">
+                            <li class="list-group-item handClass">全部库存</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading handClass" role="tab" id="couponMenu" data-toggle="collapse" data-parent="#accordion" href="#collapseCouponMenu" aria-expanded="false" aria-controls="collapseCouponMenu">
+                        <h4 class="panel-title">
+                            <a>
+                                优惠券管理
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseCouponMenu" class="panel-collapse collapse" role="tabpanel" aria-labelledby="couponMenu">
+                        <ul class="list-group">
+                            <li class="list-group-item handClass">优惠券列表</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading handClass" role="tab" id="systemMenu" data-toggle="collapse" data-parent="#accordion" href="#collapseSystemMenu" aria-expanded="false" aria-controls="collapseSystemMenu">
+                        <h4 class="panel-title">
+                            <a>
+                                系统管理
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseSystemMenu" class="panel-collapse collapse" role="tabpanel" aria-labelledby="systemMenu">
+                        <ul class="list-group">
+                            <li class="list-group-item handClass">用户管理</li>
+                            <li class="list-group-item handClass">角色管理</li>
+                            <li class="list-group-item handClass">权限管理</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 中间内容 -->
+        <div class="col-lg-10">
+            <div class="panel panel-default">
+                <div class="panel-heading" >我的桌面</div>
+                <div class="panel-body">
+                    内容
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
