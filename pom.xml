@@ -81,8 +81,8 @@
   </dependencies>
 
   <build>
-    <plugins>
 
+    <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
@@ -90,7 +90,65 @@
           <fork>true</fork>
         </configuration>
       </plugin>
-
     </plugins>
+
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+        <excludes>
+          <exclude>application-dev.properties</exclude>
+          <exclude>application-test.properties</exclude>
+          <exclude>application-prod.properties</exclude>
+          <exclude>application.properties</exclude>
+        </excludes>
+      </resource>
+      <resource>
+        <filtering>true</filtering>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>application-${profileActive}.properties</include>
+          <include>application.properties</include>
+        </includes>
+      </resource>
+    </resources>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <configuration>
+            <encoding>utf-8</encoding>
+            <useDefaultDelimiters>true</useDefaultDelimiters>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+
   </build>
+  <profiles>
+    <profile>
+        <id>dev</id>
+        <properties>
+          <profileActive>dev</profileActive>
+        </properties>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+    </profile>
+    <profile>
+        <id>test</id>
+        <properties>
+          <profileActive>test</profileActive>
+        </properties>
+    </profile>
+    <profile>
+        <id>prod</id>
+        <properties>
+          <profileActive>prod</profileActive>
+        </properties>
+    </profile>
+  </profiles>
+
 </project>
